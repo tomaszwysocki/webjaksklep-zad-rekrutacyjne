@@ -135,14 +135,16 @@ input:focus + .label .label-text,
 }
 
 .results ul li:first-of-type {
-  border-radius: 5px 5px 0 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .results ul li:last-of-type {
-  border-radius: 0 0 5px 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
-.results ul li:hover {
+.results ul li:not(:has(.not-found)):hover {
   filter: brightness(0.9);
 }
 
@@ -152,6 +154,10 @@ input:focus + .label .label-text,
   margin: 0 20px;
   padding: 15px 0;
   font-size: 13px;
+}
+
+.not-found {
+  justify-content: center;
 }
 
 .price {

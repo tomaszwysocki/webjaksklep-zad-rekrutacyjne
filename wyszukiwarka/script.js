@@ -35,6 +35,16 @@ const debounce = func => {
   }
 }
 
+const appendNotFound = () => {
+  const listItem = document.createElement('li')
+  const result = document.createElement('div')
+
+  result.classList.add('result', 'not-found')
+  result.innerText = 'No results'
+  listItem.appendChild(result)
+  list.appendChild(listItem)
+}
+
 const appendListItem = ({ title: name, price }) => {
   const listItem = document.createElement('li')
   const result = document.createElement('div')
@@ -74,15 +84,17 @@ const handleSearchBar = async (event, signal) => {
       list.innerHTML = ''
       return
     }
-  }
-
-  if (!products.length) {
-    results.classList.add('empty')
-    list.innerHTML = ''
-    return
+  } else {
+      results.classList.add('empty')
+      list.innerHTML = ''
+      return
   }
 
   list.innerHTML = ''
+
+  if (!products.length) {
+    appendNotFound()
+  }
 
   products.forEach(product => {
     appendListItem(product)

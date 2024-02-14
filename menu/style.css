@@ -4,6 +4,7 @@
   font-family: 'Poppins';
   font-weight: 500;
   --main-color: #333333;
+  --main-color-hover: #6d6d6d;
   --secondary-color: #000000;
   --main-bg-color: #f4f4f4;
   --secondary-bg-color: #ff4242;
@@ -15,6 +16,10 @@ body {
 
 a {
   text-decoration: none;
+}
+
+a:hover {
+  color: var(--main-color-hover);
 }
 
 nav {
@@ -294,6 +299,7 @@ nav > ul > li > ul > li ul {
     font-weight: 600;
     margin: 12.5px 0;
     padding: 0;
+    margin-left: auto;
   }
 
   #promotion a {
